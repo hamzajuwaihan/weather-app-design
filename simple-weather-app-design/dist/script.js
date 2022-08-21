@@ -23,6 +23,7 @@ weatherUpdate = (city) => {
   const data = fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f031ccafb27cb66dcd178c6209aa9d59`).then((response) => {
     return response.json();
   }).then((data) => {
+    console.log(data)
     cityName.innerHTML = data.name;
     Temp.innerHTML = `${Math.round(data.main.temp - 273.15)}°C`;
 
@@ -36,6 +37,8 @@ weatherUpdate = (city) => {
     date.innerHTML = new Date().toLocaleDateString('en-gb');
 
 
+  }).catch((error) => {
+    alert(`Error: `, error);
   })
 
 
