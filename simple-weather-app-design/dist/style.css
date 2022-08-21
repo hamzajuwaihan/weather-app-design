@@ -243,5 +243,9 @@ body {
 }
 
 #city {
-	color: black;
+	color: white;
+
+}
+select{
+	background-color: black;
 }
